@@ -10,28 +10,26 @@ on:
 jobs:
  build:
  
- runs-on:ubunto-latest
+  runs-on: ubunto-latest
  
- steps:
- - uses: actions/checkout@v1
+  steps:
+  - uses: actions/checkout@v1
  
- - name: Setup .NET Core
-  uses: actions/setupt-dotnet@v1
-  with: 
-   dotnet-version: 3.1.200
- - name: Build with dotnet
-  run: dotnet build ./src/WebAppManager.sln --configurtionRelease
+  - name: Setup .NET Core
+    uses: actions/setupt-dotnet@v1
+    with: 
+     dotnet-version: 3.1.200
+  - name: Build with dotnet
+    run: dotnet build ./src/WebAppManager.sln --configurtionRelease
   
-  lint:
-  
-   runs on: ubunto-latest
-   
-   
-   steps: 
-    - uses: actions/checkout@v1
-    
-    - name: Super-Linter
-      uses: github/super-linter@v4.9.2
-    env:
-    GITHUB_TOKEN: ${( secrets.GITHUB_TOKEN )}
+ lint:
+ 
+     runs-on: ubunto-latest
+     
+     steps: 
+     - uses: actions/checkout@v1
+     - name: Super-Linter
+       uses: github/super-linter@v4.9.2
+       env:
+        GITHUB_TOKEN: ${( secrets.GITHUB_TOKEN )}
     
