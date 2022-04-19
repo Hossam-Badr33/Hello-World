@@ -10,7 +10,7 @@ on:
 jobs:
  build:
  
- runs-on:unbunto-latest
+ runs-on:ubunto-latest
  
  steps:
  - uses: actions/checkout@v1
@@ -24,7 +24,7 @@ jobs:
   
   lint:
   
-   runs on: unbinto-latest
+   runs on: ubunto-latest
    
    
    steps: 
